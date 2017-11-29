@@ -52,10 +52,19 @@ public class UsuarioDao {
     return;
   }
   
-  @SuppressWarnings("unchecked")
-  public List<Favorito> getRoles() {
-    
-    return getSession().createQuery("from Role").list();
+  public void agregar(Favorito favorito) {
+	  	try {
+	  		getSession().save(favorito);
+		} catch (Exception e) {
+			getSession().delete(favorito);
+		}
+	    return;
   }
+  
+  @SuppressWarnings("unchecked")
+  public List<Favorito> getFavoritos(long id) {
+    return getSession().createQuery("from Favorito where idUsuario ="+id).list();
+  }
+
 
 } // class UsuarioDao

@@ -74,10 +74,26 @@ dl{
 
 #btnUsuario{
   position: absolute;
-  bottom: 2em;
-  left: 1em;
-  margin: 0 auto 0 auto;
+  top:200px;
+  left: -90px;	
+  height:172px;
+  width:160px;
+  border-bottom-style: none;
+  border-radius:0 100px 100px 0;
+  background-image:url(/images/diglett.png);
+  background-color: transparent; 
+  
 }
+
+#btnUsuario:hover{
+  left :-35px;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+
 
 .caja{
 	padding:50px;

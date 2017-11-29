@@ -21,6 +21,17 @@ public class Favorito implements Serializable{
     @Column(name = "idUsuario")
     private Long idUsuario;
 	
+	
+	
+	public Favorito() {
+
+	}
+
+	public Favorito(String idFavorito, Long idUsuario) {
+		this.idFavorito = idFavorito;
+		this.idUsuario = idUsuario;
+	}
+
 	@ManyToOne
     @JoinColumn(name = "idUsuario" , insertable=false, updatable=false)
     private Usuario usuario;

@@ -11,13 +11,16 @@
         <div id="sidebar-wrapper">
 		    <ul th:fragment="sidebar" class="sidebar-nav">
 		         <li class="sidebar-brand">
-		             <a href="#" th:inline="text">[[${#httpServletRequest.remoteUser}]]</a>
+		             <a id="nombreUsuario" href="#" th:inline="text">[[${#httpServletRequest.remoteUser}]]</a>
 		         </li>
 		         <li>
 		             <a th:href="@{/logout}">CerrarSesion</a>
 		         </li>
-		      
+		        
 		     </ul>
+		     <p><ul id="pokemonesFavoritos">
+		         </ul></p>
+		     
         </div>
         <!-- /#sidebar-wrapper -->
 
@@ -41,6 +44,12 @@
 		  </script>
 		  <script src="/src/ajax.js"></script>
 		<script src="/src/api.js"></script>
+		<script type="text/javascript">
+		window.onload = function() {
+			  mostrarFavoritos();
+			}
+
+		</script>
 	
 	</body>
 </html>
